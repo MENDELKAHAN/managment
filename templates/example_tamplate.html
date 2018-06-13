@@ -1,0 +1,23 @@
+<!-- Upload form template -->
+<p>[+upload_instruction+]</p>
+
+<form id="upload_form" enctype="multipart/form-data" action="" method="post">
+	<div>
+		<label for="input">[+upload_image+]: *</label>
+		<input name="file" type="file" id="input" required />
+	</div>
+	
+	<div>
+		<label for="image_title">[+image_title+]: *</label>
+		<input type="text" id="image_title" name="image_title" value="[+input_title+]" required />
+	</div>
+	
+	<div>
+		<label for="image_description">[+image_description+]:</label>
+		<textarea id="image_description" name="image_description">[+input_description+]</textarea>
+	</div>
+	
+	<div>
+		<input type="submit" id="submit_button" value="[+submit_button+]" name="submit" />
+	</div>
+</form>
