@@ -2,17 +2,26 @@
 
 Session_start();
 
-// sets lang to english
+// stores user id
+
+if (isset($_SESSION["user"])){
+        $userId = $_SESSION["user"];
+    };
+
+ 
+    
+    function errors(){
+        if (isset($_SESSION["errors"])){
+          $errors =  $_SESSION["errors"];
+          $_SESSION["errors"]= null;
+          return $errors;
+      }
+    }
+
+    
+
+
 if (!isset($_SESSION["lang"])) {
-    // $browser_lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    // switch ($browser_lang){
-    //        case "fr":
-    //     $_SESSION["lang"] = "fr";
-    //     default:
-    //         $_SESSION["lang"] = "en";
-    //         break;
-    //     }
-    // }else{
     $_SESSION["lang"] = "en";
 }
 
