@@ -14,6 +14,8 @@
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
 	defined('CLASS_PATH') ? null : define('CLASS_PATH', SITE_ROOT.DS.'classes');
 	defined('LARGE_IMG_PATH') ? null : define('LARGE_IMG_PATH', SITE_ROOT.DS.'images'.DS."catalogue");
+	defined('URL')  ? null : define('URL', 'http://localhost/cleaning/');
+
 
 	$list = [
 		'config',

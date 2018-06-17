@@ -34,19 +34,31 @@ class Users extends DatabaseObject{
         }
       }
 
-    public static function authenticate($username="", $password="") {
+    public function authenticate($username="", $password="") {
+
         global $database;
+
         $username = $database->escape_value($username);
         $password = $database->escape_value($password);
+       
+        $sql = "SELECT * FROM   users  WHERE users_fname =" . "'". $username ."'";
+        $result_set = $database->query($sql);
+      
+        if(mysqli_num_rows($result_set) > 0){
+            $sql = "SELECT * FROM   users  WHERE users_fname =" . "'". $username ."'";
+            $result_set = $database->query($sql);
+            $row =  mysqli_fetch_assoc($result_set);
+            if(Password::verify($password,$row['users_password'])){
+                $_SESSION["user"] = $row['id'];
+                
+                // redirect_to(URL.'index.php');
+            }else{
+                echo "not loged id";
 
-        $sql  = "SELECT * FROM  users ";
-        $sql .= "WHERE users_username = '{$username}' ";
-        $sql .= "AND users_password = '{$password}' ";
-        $sql .= "LIMIT 1";
+        }
 
-        $result_array = self::find_by_sql($sql);
-        return !empty($result_array) ? array_shift($result_array) : false;
     }
+ }
 
     private function has_attributes($aattributes){
         $object_vars = $this-> attributes();

@@ -78,7 +78,7 @@ class MySQLDatabase {
      * @param $string 
      */
     public function escape_value($string){
-        $escaped_string = mysqli_real_escape_string($this->connection, $string);
+       $escaped_string = mysqli_real_escape_string($this->connection, $string);
         return $escaped_string;
     }
     

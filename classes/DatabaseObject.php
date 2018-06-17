@@ -140,7 +140,7 @@ class DatabaseObject extends MySQLDatabase{
      */
     
     public static function find_by_any_key($column, $key = 0){
-        $sql = "SELECT * FROM  " . static::$table_name . "  WHERE " . $column . " = " . $key;
+        $sql = "SELECT * FROM  " . static::$table_name . "  WHERE " . $column . " = " . "'" .$key . "'";
         return static::find_by_sql($sql);
     }
     
