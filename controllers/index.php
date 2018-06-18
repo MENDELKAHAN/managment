@@ -3,13 +3,20 @@
 /**
  * 
  */
-class Index 
-{
+class Index extends Controller{
+
 	
 	function __construct()
 	{
-		# code...
-	}
-}
+	parent::__construct();
 
+		echo "we are in index";
+	}
+
+	public function hello()
+	{
+		echo "hello";
+	}
+
+}
 ?>

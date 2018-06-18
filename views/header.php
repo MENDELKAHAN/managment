@@ -1,6 +1,6 @@
 <?php
 
-$file  = 'templates/header.html';
+	$file  = 'templates/header.html';
 	$tpl_a = file_get_contents($file);
 	$pass1 = str_replace('[+my_profile+]', $lang['my_profile'], $tpl_a);
 	$pass2 = str_replace('[+my_calendar+]', $lang['my_calendar'], $pass1);

@@ -3,13 +3,13 @@
 	defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 
 	// change based on current server can use php function $_SERVER['DOCUMENT_ROOT'] to find this info
-	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS. 'volume1'.DS.'Web'.DS.'cleaning_managment'.DS);
+	// defined('SITE_ROOT') ? null : define('SITE_ROOT', DS. 'volume1'.DS.'Web'.DS.'cleaning_managment'.DS);
 
 	// C:\xampp\htdocs\cleaning\includes\initialize.php
 	
 
 	//local server
-	// defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'PHP'.DS.'w1fma_titan');
+	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'cleaning');
 
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
 	defined('CLASS_PATH') ? null : define('CLASS_PATH', SITE_ROOT.DS.'classes');

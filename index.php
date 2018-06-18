@@ -1,11 +1,7 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-
-// include ("includes/initialize.php");
+include ("includes/initialize.php");
 
 // if (!isset($_SESSION["user"])){
 // 	require 'views/login.php';
@@ -21,11 +17,12 @@ error_reporting(E_ALL);
 // include (LIB_PATH.'top_navigation_menu.html');
 
 // include (LIB_PATH.'nav.html');
+require("libs/controller.php");
+require("libs/bootstrap.php");
+require("libs/view.php");
+$app = new Bootstrap;
 
 
-$url = $_GET['url'];
-
-echo $url;
 
 
 
@@ -58,10 +55,10 @@ echo $url;
 
 
 
-include(LIB_PATH."footer.html");
+//include(LIB_PATH."footer.html");
 	
 
 
 
-}
+// }
 
