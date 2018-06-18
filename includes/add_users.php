@@ -11,6 +11,7 @@ if(isset($_POST['submit'])){
 		$user = new Users;
 		$user -> users_fname = $_POST['users_fname'];
 		$user -> users_sname = $_POST['users_lname'];
+		$user -> users_name = $_POST['users_name'];
 		$user -> users_password = Password::create_password($_POST['users_password']);
 		$user -> users_group = $_POST['users_group'] =1;
 		$userId = $_SESSION["user"] = $user ->create();
@@ -22,6 +23,7 @@ if(isset($_POST['submit'])){
 }
 
 }else{
-	echo "string";
+	
+	redirect_to(URL.'index.php');
 }
 ?>

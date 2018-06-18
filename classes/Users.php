@@ -17,6 +17,7 @@ class Users extends DatabaseObject{
 
     public $users_fname;
     public $users_sname;
+    public $users_name;
     public $users_password;
     public $users_group;
     
