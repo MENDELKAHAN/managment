@@ -22,18 +22,6 @@ require("libs/bootstrap.php");
 require("libs/view.php");
 $app = new Bootstrap;
 
-
-
-
-
-
-
-
-
-
-
-
-
 // if(isset($_GET['page'])){
 // 			    $page = $_GET['page'];
 			    
@@ -41,18 +29,6 @@ $app = new Bootstrap;
 // 		            case "upload":
 // 		            require 'views/image_form.php';
 // 		            break;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //include(LIB_PATH."footer.html");
