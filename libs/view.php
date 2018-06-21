@@ -8,7 +8,7 @@ class View
 	
 	function __construct()
 	{
-		echo "in the view";
+	
 	}
 
 	public function render($name='')

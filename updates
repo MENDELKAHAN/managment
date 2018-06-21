@@ -1,7 +1,0 @@
-updates 
-
-password varchar 60
-remove salt
-user_name
-eamil_uniqe
-add user name or use email

@@ -1,5 +1,8 @@
 <?php
 
+// temp
+include 'languages/en.php';
+
 	$file  = 'templates/header.html';
 	$tpl_a = file_get_contents($file);
 	$pass1 = str_replace('[+my_profile+]', $lang['my_profile'], $tpl_a);

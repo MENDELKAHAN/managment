@@ -1,4 +1,7 @@
 <?php
+
+
+// this class is not in use
 /**
  * MySQLDatabase
  * 

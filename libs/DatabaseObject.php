@@ -1,5 +1,5 @@
 <?php
-require_once('Database.php');
+// require_once('Database.php');
 
 /**
  * MySQLDatabase
@@ -8,8 +8,16 @@ require_once('Database.php');
  * @author Mendel Kahan <mendy@onlineforu.co.uk>
  */
 
-class DatabaseObject extends MySQLDatabase{
-    
+// class DatabaseObject extends MySQLDatabase{
+ class DatabaseObject {
+
+
+    static public $database;
+
+    static public function set_database($database){
+        self::$database = $database;
+    }
+
     /**
      * getColumnNames
      * this mentod returns all column names in a table, it is used for creade a class object

@@ -8,8 +8,19 @@ class Bootstrap
 	
 	function __construct()
 	{
-		$url = explode("/", rtrim($_GET['url']));
-		$file = "controllers/".$url[0].".php";		
+		$url = isset($_GET['url']) ? $_GET['url'] : null;
+		$url = explode("/", rtrim($url));
+
+		
+
+		if(empty($url[0]) || $url[0] == "index.php"){
+			require "controllers/index.php";
+			$controller = new Index();
+			return false;
+		}
+
+		$file = "controllers/".$url[0].".php";	
+
 			
 		if(file_exists($file)){
 			require $file;
@@ -17,12 +28,10 @@ class Bootstrap
 			require "controllers/errors.php";
 			$controller = new Errors($file);
 			return false;
-
 		}
 
-		
-
 		$controller = new $url[0];
+		$controller -> loadModel($url[0]);
 
 
 		if(isset($url[2])){
@@ -30,9 +39,9 @@ class Bootstrap
 		}else{
 
 			if (isset($url[1])) {
-			$controller -> {$url[1]}();
-}
-}
+				$controller -> {$url[1]}();
+			}
+		}
 	}
 }
 

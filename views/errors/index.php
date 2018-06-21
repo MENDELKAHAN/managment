@@ -1,21 +1,17 @@
-this is from the error view
-
-
 <?php
 
-echo $this -> msg;
 
 
+	include'includes/head.html';
 
-// include('views/head.html');
+	include 'views/header.php';
 
-// include ('views/header.php');
+	include ('includes/top_navigation_menu.html');
 
+	include 'includes/nav.html';
 
-// include ('views/top_navigation_menu.html');
+	echo $this -> msg;
 
-// include ('views/nav.html');
-
-// include('views/footer.html');
+	require 'includes/footer.html';
 
 ?>

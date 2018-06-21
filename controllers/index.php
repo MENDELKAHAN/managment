@@ -8,14 +8,29 @@ class Index extends Controller{
 	
 	function __construct()
 	{
-	parent::__construct();
-	$this -> view-> render("index/index");
+
+		parent::__construct();
+
+
+		if(Session::get('logedIn') == false){
+
+			redirect_to('login');
+		}
+		
+		$this -> view-> render("index/index");
+	
 	}
 
-	public function hello()
+
+	public function logout()
 	{
-		echo "hello";
+
+		Session::destroy();
+		redirect_to("login");
+
 	}
+
+	
 
 }
 ?>

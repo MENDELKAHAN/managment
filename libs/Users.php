@@ -37,24 +37,28 @@ class Users extends DatabaseObject{
 
     public function authenticate($username="", $password="") {
 
-        global $database;
+     
 
-        $username = $database->escape_value($username);
-        $password = $database->escape_value($password);
+        $username = self::$database->escape_string($username);
+        $password = self::$database->escape_string($password);
        
         $sql = "SELECT * FROM   users  WHERE users_fname =" . "'". $username ."'";
-        $result_set = $database->query($sql);
+        $result_set = self::$database->query($sql);
+
       
-        if(mysqli_num_rows($result_set) > 0){
+        if($result_set->num_rows > 0){
             $sql = "SELECT * FROM   users  WHERE users_fname =" . "'". $username ."'";
-            $result_set = $database->query($sql);
+
+            $result_set = self::$database->query($sql);
             $row =  mysqli_fetch_assoc($result_set);
             if(Password::verify($password,$row['users_password'])){
-                $_SESSION["user"] = $row['id'];
-                
-                // redirect_to(URL.'index.php');
+                Session::set('user',$row['id']);
+                Session::set('logedIn',true);
+
+                // redirect_to('index');
+                header('index');
             }else{
-                echo "not loged id";
+                 // redirect_to(URL.'login');
 
         }
 

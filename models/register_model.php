@@ -1,10 +1,23 @@
 <?php
-include ("initialize.php");
 
 
-// create user
+/**
+ * 
+ */
+class Login_Model extends Model
+{
+	
+	function __construct()
+	{
 
-if(isset($_POST['submit'])){
+	}
+
+	public function create()
+	{
+		
+		// create user
+
+// if(isset($_POST['submit'])){
 
 	if($_POST['repeat_password'] == $_POST['users_password']){
 
@@ -17,13 +30,24 @@ if(isset($_POST['submit'])){
 		$userId = $_SESSION["user"] = $user ->create();
 		redirect_to(URL.'index.php');
 
-}else{
+		// }else{
 
-	echo "repeat_password";
-}
+		// 	echo "repeat_password";
+		// }
 
-}else{
+		// }else{
+			
+		// 	redirect_to(URL.'index.php');
+		}
+			}
+
 	
-	redirect_to(URL.'index.php');
+
+	
 }
+
+
 ?>
+
+
+
