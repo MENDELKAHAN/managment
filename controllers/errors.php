@@ -10,7 +10,7 @@ class Errors extends Controller{
 	{
 		parent::__construct();
 		
-		$this -> view -> msg = "this is a error message";
+		$this -> view -> msg = "this is a error message <br/> $page not found.";
 
 		$this -> view-> render("errors/index");
 

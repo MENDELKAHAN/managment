@@ -28,7 +28,17 @@ class Login_Model extends Model
 		$user -> users_password = Password::create_password($_POST['users_password']);
 		$user -> users_group = $_POST['users_group'] =1;
 		$userId = $_SESSION["user"] = $user ->create();
-		redirect_to(URL.'index.php');
+
+		if($userId){
+			$email = new Email;
+			$email -> user_email_info_email = $_POST['email'];
+    		$email -> user_email_info_type = 2;
+    		$email -> user_id = $userId;
+    		$email ->create();
+		}
+
+
+		// redirect_to(URL.'index.php');
 
 		// }else{
 

@@ -1,8 +1,6 @@
 
 <?php
 
-
-
 	include'views/head.html';
 
 	include 'views/header.php';

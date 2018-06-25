@@ -2,16 +2,15 @@
 
 
 
-	include'includes/head.html';
+	include'views/head.html';
 
 	include 'views/header.php';
 
-	include ('includes/top_navigation_menu.html');
-
-	include 'includes/nav.html';
+	include 'views/nav.html';
 
 	echo $this -> msg;
 
-	require 'includes/footer.html';
+	require 'views/footer.html';
+
 
 ?>

@@ -10,8 +10,6 @@
 	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'cleaning');
 
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
-
-	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
 	// defined('URL')  ? null : define('URL', 'http://192.168.1.102/cleaning_managment/');
 	defined('LIB')  ? null : define('LIB', SITE_ROOT .DS.'libs');
 
@@ -45,6 +43,8 @@
 	require_once(SITE_ROOT.DS.'languages'.DS.'en.php');
 
 	//call all classes
+	
+	// UserEmailInfo
 	// require_once(CLASS_PATH.DS.'Users.php');
 	// require_once(CLASS_PATH.DS.'Password.php');
 

@@ -26,7 +26,9 @@ class Index extends Controller{
 	{
 
 		Session::destroy();
-		redirect_to("login");
+		// redirect_to("login");
+				header('location: index');
+
 
 	}
 
