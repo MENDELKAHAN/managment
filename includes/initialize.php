@@ -45,7 +45,7 @@
 	//call all classes
 	
 	// UserEmailInfo
-	// require_once(CLASS_PATH.DS.'Users.php');
+	require_once(LIB.DS.'Users.php');
 	// require_once(CLASS_PATH.DS.'Password.php');
 
 	

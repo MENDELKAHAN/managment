@@ -21,11 +21,14 @@ class Bootstrap
 		if(file_exists($file)){
 			require $file;
 		}else{
-			$this->error();
+			$this->error($file);
 		}
+
+		//still calling ecen if error
 
 		$controller = new $url[0];
 		$controller -> loadModel($url[0]);
+
 
 		if(isset($url[2])){
 			if(method_exists($controller, $url[1])){
@@ -38,13 +41,14 @@ class Bootstrap
 
 			if(isset($url[1])){
 				if(method_exists($controller, $url[1])){
+
 					$controller -> {$url[1]}();
 				}else{
 					$this->error();
 				}
 
 			}else{
-				$controller->index();
+				$controller->Index();
 			}
 		}
 	}
@@ -52,6 +56,7 @@ class Bootstrap
 		{
 			require "controllers/errors.php";
 			$controller = new Errors($file);
+			$controller->index();
 			return false;
 		}
 

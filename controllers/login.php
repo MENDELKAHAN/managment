@@ -12,9 +12,11 @@ class Login extends Controller{
 		
 		// $this -> view -> msg = "login page";
 
+	}
+
+	public function index()
+	{
 		$this -> view-> render("login/index");
-
-
 	}
 
 

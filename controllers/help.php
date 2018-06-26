@@ -12,13 +12,17 @@ class Help extends Controller{
 		echo "we are in help";
 	}
 
-	public function other($arg= false)
+
+	public function index()
 	{
+		echo "we are in help";
+		// $this -> view-> render("help/index");	}
+	}
 		
 
-		require 'models/help_model.php';
-		$model =  new Help_Model();
-	}
+		// require 'models/help_model.php';
+		// $model =  new Help_Model();
+	
 }
 
 ?>

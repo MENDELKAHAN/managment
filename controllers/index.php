@@ -17,20 +17,25 @@ class Index extends Controller{
 			redirect_to('login');
 		}
 		
-		$this -> view-> render("index/index");
-	
 	}
 
+
+	public function index()
+	{
+		$this -> view-> render("index/index");
+	}
 
 	public function logout()
 	{
 
 		Session::destroy();
 		// redirect_to("login");
-				header('location: index');
+				header('location: ../index');
 
 
 	}
+
+
 
 	
 

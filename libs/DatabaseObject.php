@@ -28,10 +28,9 @@
     
    public function getColumnNames()
     {
-        global $database;
+
         $query = "SELECT * from " . static::$table_name;
-        
-        if ($result = $database->query($query)) {
+        if ($result = self::$database -> query($query)) {
             $list = array();
             while ($finfo = $result->fetch_field()) {
                 $list[] = ($finfo->name);
@@ -63,9 +62,9 @@
         $sql .= ") VALUES ('";
         $sql .= join("', '", array_values($attributes));
         $sql .= "')";
-        if ($database->query($sql)) {
+        if (self::$database->query($sql)) {
             
-            return $this->{$table_name . "_id"} = $database->insert_id();
+            return $this->{$table_name . "_id"} = self::$database->insert_id;
             
             // return true;
         } else {
@@ -227,10 +226,9 @@
      * @return clean_attributes;
      */
     protected function sanitized_attributes(){
-        global $database;
         $clean_attributes = array();
         foreach ($this->attributes() as $key => $value) {
-            $clean_attributes[$key] = $database->escape_value($value);
+            $clean_attributes[$key] = self::$database->escape_string($value);
         }
         return $clean_attributes;
     }

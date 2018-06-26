@@ -9,19 +9,18 @@ class Register extends Controller{
 	function __construct($page="")
 	{
 		parent::__construct();
-		
-		// $this -> view -> msg = "login page";
-
-		$this -> view-> render("register/index");
-
-
 	}
 
 
-	// public function run()
-	// {
- //          $this-> model-> run();
-	// }
+	public function index()
+	{
+		$this -> view-> render("register/index");
+	}
+
+	public function create()
+	{
+          $this-> model-> create();
+	}
 
 
 		

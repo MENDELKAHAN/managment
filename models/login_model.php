@@ -18,9 +18,9 @@ class Login_Model extends Model
 		$password = $pass = $_POST['password'];  
 		Users::authenticate($user, $pass);
 		// redirect_to(URL."index");
-		header('location: index');
+		header('location: ../index');
 	}
-
+ 
 	
 }
 
