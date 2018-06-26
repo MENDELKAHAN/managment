@@ -5,6 +5,7 @@
  * 
  */
 	class Password{
+		
 		public static function  create_password($input){
 				return  password_hash ($input , PASSWORD_DEFAULT);
 		}

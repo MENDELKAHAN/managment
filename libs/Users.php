@@ -14,7 +14,6 @@ class Users extends DatabaseObject{
     // SHOW COLUMNS FROM table_name
     public $db_fields = array();
 
-
     public $users_fname;
     public $users_sname;
     public $users_name;
@@ -37,8 +36,6 @@ class Users extends DatabaseObject{
 
     public function authenticate($username="", $password="") {
 
-     
-
         $username = self::$database->escape_string($username);
         $password = self::$database->escape_string($password);
        
@@ -56,9 +53,9 @@ class Users extends DatabaseObject{
                 Session::set('logedIn',true);
 
                 // redirect_to('index');
-                header('index');
+        header('location: ../index');
             }else{
-                 // redirect_to(URL.'login');
+        header('location: login');
 
         }
 
@@ -69,7 +66,6 @@ class Users extends DatabaseObject{
         $object_vars = $this-> attributes();
         return array_key_exists($attributes, $object_vars);
     }
-
 
 
 // temp over ride
