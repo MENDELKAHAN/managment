@@ -25,8 +25,5 @@
 	$lang['already_have_an_account'] = "Already have an account";
 	$lang['create_an_account'] = "Create an Account";
 	$lang['create_account'] = "Create Account";
-
-
-
 ?>
 

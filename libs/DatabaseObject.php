@@ -54,7 +54,7 @@
      * @return insert_id() last inserted id
      */
     public function create(){
-        global $database;
+  
         $attributes = $this->sanitized_attributes();
         $table_name = static::$table_name;
         $sql        = "INSERT INTO " . $table_name . " (";
