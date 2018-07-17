@@ -16,9 +16,14 @@ class Login_Model extends Model
 	{
 		$username = $user = $_POST['username'];
 		$password = $pass = $_POST['password'];  
-		Users::authenticate($user, $pass);
-		// redirect_to(URL."index");
-		header('location: ../index');
+		if(Users::authenticate($user, $pass)){
+			Session::set('user',$user);
+            Session::set('logedIn',true);
+            header('location: ../index');
+		}
+		header('location, ../login');
+
+		
 	}
  
 	

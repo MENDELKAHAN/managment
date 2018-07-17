@@ -7,10 +7,10 @@
 
 
 	//local server
-	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'cleaning');
+	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'managment');
 
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
-	// defined('URL')  ? null : define('URL', 'http://192.168.1.102/cleaning_managment/');
+	defined('URL')  ? null : define('URL', 'http://localhost/managment');
 	defined('LIB')  ? null : define('LIB', SITE_ROOT .DS.'libs');
 
 
@@ -22,7 +22,7 @@
 	];
 
 	foreach ($list as $key) {
-		require_once(LIB_PATH.DS.$key.'.php');
+		require_once(LIB_PATH.$key.'.php');
 	}
 
 
@@ -42,18 +42,11 @@
 	// require_once(SITE_ROOT.DS.'languages'.DS.$_SESSION["lang"].'.php');
 	require_once(SITE_ROOT.DS.'languages'.DS.'en.php');
 
-	//call all classes
-	
-	// UserEmailInfo
-	require_once(LIB.DS.'Users.php');
-	// require_once(CLASS_PATH.DS.'Password.php');
-
-	
 
 	$db = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 	DatabaseObject::set_database($db);
 
-	$sessions= new Session();
+	$sessions = new Session();
 
 
 

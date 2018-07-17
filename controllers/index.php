@@ -16,6 +16,8 @@ class Index extends Controller{
 
 			redirect_to('login');
 		}
+
+		$this -> view  -> js = array('index/js/script.js');
 		
 	}
 

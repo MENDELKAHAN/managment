@@ -2,7 +2,7 @@
 
 
 
-	include'views/head.html';
+	include'views/head.php';
 
 	include 'views/header.php';
 
@@ -10,7 +10,7 @@
 
 	echo $this -> msg;
 
-	require 'views/footer.html';
+	require 'views/footer.php';
 
 
 ?>

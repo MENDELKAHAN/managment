@@ -48,7 +48,7 @@ class Register_Model extends Model
 
 		// }else{
 			
-			redirect_to("index");
+			redirect_to("../index");
 		// }
 			}
 

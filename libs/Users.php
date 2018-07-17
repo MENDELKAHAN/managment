@@ -1,5 +1,5 @@
 <?php
-require_once('DatabaseObject.php');
+// require_once('DatabaseObject.php');
 
 /**
  * Users
@@ -49,18 +49,13 @@ class Users extends DatabaseObject{
             $result_set = self::$database->query($sql);
             $row =  mysqli_fetch_assoc($result_set);
             if(Password::verify($password,$row['users_password'])){
-                Session::set('user',$row['id']);
-                Session::set('logedIn',true);
-
-                // redirect_to('index');
-        header('location: ../index');
+                return true;
             }else{
-        header('location: login');
-
+                return false;
+            }
         }
 
     }
- }
 
     private function has_attributes($aattributes){
         $object_vars = $this-> attributes();

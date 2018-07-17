@@ -18,6 +18,14 @@
         }
     }
 
+    function if_is_set($value)
+    {
+        if(isset($value)){
+            return $value;
+    }
+        return "";
+    }
+
     // resizes an image
     // takes 3 parems
     // 1 $locaion to save

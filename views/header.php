@@ -12,4 +12,5 @@ include 'languages/en.php';
 	$final = str_replace('[+log_out+]', $lang['log_out'], $pass4);
 	echo $final;
 
+
 ?>

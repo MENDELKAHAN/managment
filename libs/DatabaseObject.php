@@ -62,6 +62,7 @@
         $sql .= ") VALUES ('";
         $sql .= join("', '", array_values($attributes));
         $sql .= "')";
+        
         if (self::$database->query($sql)) {
             
             return $this->{$table_name . "_id"} = self::$database->insert_id;
@@ -159,7 +160,7 @@
      */
     public static function find_by_id($id = 0){
         $result_array = static::find_by_sql("SELECT * FROM  " . static::$table_name . "  WHERE " . static::$table_name . "_id={$id} LIMIT 1");
-        
+     
         return !empty($result_array) ? array_shift($result_array) : false;
     }
     
@@ -170,28 +171,36 @@
      * @return $object_array values are returned are an object
      */
     public static function find_by_sql($sql = ""){
-        
-        global $database;
-        $result_set = $database->query($sql);
-        
+   
+        $result_set = self::$database -> query($sql);
         $object_array = array();
-        while ($row = $database->fetch_array($result_set)) {
-            
+
+        // while ($row = $result_set->fetch_row()) {
+            while ($row = mysqli_fetch_array($result_set)){
+
+                       
             $object_array[] = static::instantiate($row);
             
         }
-        return $object_array;
+           return $object_array;
+
     }
+
+
+
     
     private static function instantiate($record){
         $class_name = get_called_class();
-        $object     = new $class_name;
-        foreach ($record as $attribute => $value) {
-            if ($object->has_attribute($attribute)) {
-                
+
+        $object  = new $class_name;
+         foreach ($record as $attribute => $value) {
+           if ($object->has_attribute($attribute)) {
+
                 $object->$attribute = $value;
             }
         }
+      
+
         return $object;
     }
     
@@ -210,7 +219,7 @@
      * has_attribute
      * @return attributes();
      */
-    protected function attributes(){
+    public function attributes(){
         $attributes = array();
         foreach ($this->db_fields as $field) {
             if (property_exists($this, $field)) {
@@ -232,6 +241,31 @@
         }
         return $clean_attributes;
     }
+
+
+    
+
+    public function transaction_start(){
+        self::$database->begin_transaction();
+    }
+
+    public function transaction_comit()
+    {
+        self::$database->commit();
+    }
+
+    public function transaction_rollback()
+    {
+        self::$database->rollback();
+    }
+
+    public function plain_sql($sql='')
+    {
+         return self::$database -> query($sql);
+    }
+
+    
+
     
 }
 
