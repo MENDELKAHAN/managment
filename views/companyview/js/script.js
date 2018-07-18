@@ -45,5 +45,40 @@ $(function(){
         tooltipCornerRadius: 2
     });
 });
+
+
+
+ $('.select2').select2({placeholder: 'Select state'});
+
+    //minumum 2 symbols input
+    $('.select2-minimum').select2({
+        placeholder: 'Select state',
+        minimumInputLength: 2
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 	}(window.jQuery);	

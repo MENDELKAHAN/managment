@@ -33,6 +33,9 @@
 
 
         <link href="assets/plugins/chartjs/chartist.min.css" type="text/css" rel="stylesheet">
+        <!-- advanced form options -->
+        <link href="assets/plugins/select/select.css" type="text/css" rel="stylesheet">
+
 
 
         
