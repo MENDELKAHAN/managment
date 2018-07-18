@@ -51,7 +51,7 @@ var table1 = document.getElementById('table_content');
 			    cell1.innerHTML =  table['company_legal_name'];			    
 			    cell2.innerHTML =  table['company_number'];  
 
-			    if(table['company_foreign']){var foreign = '&#x2714;'}else{var foreign = '&#x2716;'};
+			    if(table['company_foreign']){var foreign = '&#x2716;'}else{var foreign = '&#x2714;'};
 			    cell3.innerHTML =  foreign;
 			    cell4.innerHTML =  table['company_vat_number'];
 			    cell5.innerHTML =  table['company_layout_without_consent'];

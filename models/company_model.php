@@ -44,7 +44,7 @@ class Company_Model extends Model
    $companies -> company_add_commission        = if_is_set($_POST['company_add_commission']);
    $companies -> company_layout_without_consent = if_is_set($_POST['company_layout_without_consent']);
    $companies -> company_foreign               = if_is_set($_POST['company_foreign']);
-   $companies -> payment_period_id             = if_is_set($_POST['payment_period_id']);
+   $companies -> fk_company_payment_period_id   = if_is_set($_POST['payment_period_id']);
    $companies -> fk_manager_account_id         = if_is_set($_POST['fk_manager_account_id']);
    $companies -> company_active  = 1;
    
@@ -67,9 +67,9 @@ class Company_Model extends Model
   }
    
 
-  if($email_address = if_is_set($_POST['email'])!=""){
+  if(if_is_set($_POST['email'])!=""){
     $email = new companyEmails();
-    $email -> company_emails_email = $email_address;
+    $email -> company_emails_email = $_POST['email'];
     $email -> company_emails_description = "";
     $email -> company_emails_active =1;
     $email -> fk_company_id =$compnay_id;
@@ -86,7 +86,7 @@ class Company_Model extends Model
 
   if($number_address = if_is_set($_POST['contact_number'])!=""){
     $number = new CompanyNumbers();
-    $number -> company_numbers_numbers = $number_address;
+    $number -> company_numbers_number = $_POST['contact_number'];
     $number -> company_numbers_description = "";
     $number -> company_numbers_active =1;
     $number -> fk_company_id =$compnay_id;
@@ -98,12 +98,18 @@ class Company_Model extends Model
   }
 
    
-   if($bank_account_number = if_is_set($_POST['bank_account_number'])!=""){
+   if(if_is_set($_POST['bank_account_number'])!=""){
     $bank = new CompanyBanks();
+
+    
+ 
+
     $bank -> company_banks_ref = if_is_set($_POST['bank_ref']);
-    $bank -> company_banks_account_number = "";
-    $bank -> company_banks_sort_code = if_is_set($_POST['bank_sort_code']);
+    // company_banks_name
+    $bank -> company_banks_number = if_is_set($_POST['bank_account_number']);
+    $bank -> company_banks_sortcode = if_is_set($_POST['bank_sort_code']);
     $bank -> fk_company_id = $compnay_id;
+    $bank -> company_banks_active =1;
     if($bank -> create()){
       $results['bank'] ="1";
     }
