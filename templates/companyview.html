@@ -1,9 +1,9 @@
 <div class="row">
  	 <div class="col-sm-9">
  	 	<div class="row">
+		    
 		    <div class="col-md-6 col-lg-4">
 		        <div class="card panel-card recent-activites">
-		            <!-- Start .panel -->
 		            <div class="card-header">
 		                [+properties+]
 		                <div class="float-right">
@@ -11,10 +11,8 @@
 		                        <button type="button" class="btn btn-info btn-rounded btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
 		                        <div class="dropdown-menu panel-dropdown" role="menu">
 		                           <a class="dropdown-item" href="#">[+add_property+]</a>
-		                            <a class="dropdown-item" href="#">[+view+]</a>
-		                           
+		                           <a class="dropdown-item" href="#">[+view+]</a>
 		                        </div>
-
 		                    </div>
 		                </div>
 		            </div>
@@ -26,7 +24,6 @@
 
 		    <div class="col-md-6 col-lg-4">
 		        <div class="card panel-card recent-activites">
-		            <!-- Start .panel -->
 		            <div class="card-header">
 		                [+cash_by_us+]
 		                <div class="float-right">
@@ -40,11 +37,9 @@
 		                </div>
 		            </div>
 		            <div class="card-block text-xs-center">
-		                <i class="fa fa-gbp widget-icon"></i>  <h1 class="right panel-middle margin-b-0">
-		                [+cash_by_us_db+]
-		            </h1>
+		                <i class="fa fa-gbp widget-icon"></i>  <h1 class="right panel-middle margin-b-0">[+cash_by_us_db+]</h1>
 		            </div>
-		        </div><!-- End .panel --> 
+		        </div>
 		    </div>
 
 		    <div class="col-md-6 col-lg-4">
@@ -67,165 +62,157 @@
 		                <!-- [+extra_db+] -->
 		            </h1>
 		            </div>
-		        </div><!-- End .panel --> 
+		        </div>
 		    </div>
+
 		</div>
 	
+		<div class="row row-eq-height">
+	    	<div class="col-md-4">
+	       		<div class="panel panel-card recent-activites">
+	                <div class="panel-heading">
+	                	[+sharehold+] 
+			                <div class="float-right">
+			                    <div class="btn-group">
+			                        <button type="button" class="btn btn-info btn-rounded btn-sm dropdown-toggle" id="add_investor_button" data-toggle="dropdown" aria-expanded="false">[+action+]<span class="caret"></span></button>
+			                        <div class="dropdown-menu panel-dropdown" role="menu">
+			                           
+			                            <a class="dropdown-item" data-toggle="modal" data-target="#add_investor_form_model" href="companyview/addinvestor">[+add_investor+]</a>
 
-
-	<div class="row row-eq-height">
-	    <div class="col-md-4">
-	        <div class="panel panel-card recent-activites">
-	            <!-- Start .panel -->
-	            <div class="panel-heading">
-	               [+sharehold+] 
-	                <div class="float-right">
-	                    <div class="btn-group">
-	                        <button type="button" class="btn btn-info btn-rounded btn-sm dropdown-toggle" id="add_investor_button" data-toggle="dropdown" aria-expanded="false">[+action+]<span class="caret"></span></button>
-	                        <div class="dropdown-menu panel-dropdown" role="menu">
-	                           
-	                            <a class="dropdown-item" data-toggle="modal" data-target="#add_investor_form_model" href="companyview/addinvestor">[+add_investor+]</a>
-
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="panel-body  p-xl-3" >
-	                <div class="table-responsive">
-	                    <table id="basic-datatables" class="table table-bordered">
-	                        <thead>
-	                            <tr>
-	                               
-	                                <th>[+sharehold+]</th>
-	                                 <th>[+percentage+]</th>
-	                                <th>[+view+]</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-		                      [+Company_table_content_db+]
-		                    
-		                      
-	                        </tbody>
-	    					<tfoot>
-					        <tr>
-					            <th>[+sharehold+]</th>
-                                 <th>[+percentage+]</th>
-                                <th>[+view+]</th>
-					        </tr>
-					    </tfoot>
-					</table>
+			                        </div>
+			                    </div>
+			                </div>
+	            	</div>
+		            <div class="panel-body  p-xl-3" >
+		                <div class="table-responsive">
+		                    <table id="basic-datatables" class="table table-bordered">
+		                        <thead>
+		                            <tr>
+		                                <th>[+sharehold+]</th>
+		                                 <th>[+percentage+]</th>
+		                                <th>[+view+]</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+			                    	[+Company_table_content_db+]
+		                        </tbody>
+		    					<tfoot>
+							        <tr>
+							            <th>[+sharehold+]</th>
+		                                 <th>[+percentage+]</th>
+		                                <th>[+view+]</th>
+							        </tr>
+						    	</tfoot>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div><!-- End .panel --> 
-	</div>
             
-	<div class="col-md-8">
-	    <div class="panel panel-card recent-activites">
-	        <!-- Start .panel -->
-	        <div class="panel-heading">
-	            Bar Chart
-	            <div class="float-right">
-	                <div class="btn-group">
-	                    <button type="button" class="btn btn-info btn-rounded btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action<span class="caret"></span></button>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="panel-body text-center p-xl-3">
-	            <canvas  id="canvas"></canvas>
-	        </div>
-	    </div><!-- End .panel --> 
-
-
+			<div class="col-md-8">
+			    <div class="panel panel-card recent-activites">
+			        <!-- Start .panel -->
+			        <div class="panel-heading">
+			            Bar Chart
+			            <div class="float-right">
+			                <div class="btn-group">
+			                    <button type="button" class="btn btn-info btn-rounded btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action<span class="caret"></span></button>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="panel-body text-center p-xl-3">
+			            <canvas  id="canvas"></canvas>
+			        </div>
+			    </div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
 
-<div class="col-md-3">
-	<div class="tabs-container">
-    	 <ul class="nav nav-pills nav nav-tabs">
-    	 	<li class="nav-item"><a data-toggle="tab" href="#tab-1" aria-expanded="false" class="nav-link">[+business+] [+information+]</a></li>     
-        	<li class="nav-item"><a data-toggle="tab" href="#tab-2" aria-expanded="false" class="nav-link">[+bank+] [+information+]</a></li>
-        	<li class="nav-item"><a data-toggle="tab" href="#tab-3" aria-expanded="false" class="nav-link">[+business+] [+address+]</a></li>
-        	<li class="nav-item"><a data-toggle="tab" href="#tab-4" aria-expanded="false" class="nav-link">[+business+] [+contact+]</a></li>
-    	</ul>
-     <div class="tab-content">
-	       
-    		<div id="tab-1" class="tab-pane active">
-        		<div class="panel-body  p-xl-3">
-        	 		<form class="companyview/update" method="post">
-       					<h4 class="mb-xlg">[+business+] [+information+]</h4>
-    					
-    					<fieldset>
+	<div class="col-md-3">
+		<div class="tabs-container">
+	    	 <ul class="nav nav-pills nav nav-tabs">
+	    	 	<li class="nav-item"><a data-toggle="tab" href="#tab-1" aria-expanded="false" class="nav-link">[+business+] [+information+]</a></li>     
+	        	<li class="nav-item"><a data-toggle="tab" href="#tab-2" aria-expanded="false" class="nav-link">[+bank+] [+information+]</a></li>
+	        	<li class="nav-item"><a data-toggle="tab" href="#tab-3" aria-expanded="false" class="nav-link">[+business+] [+address+]</a></li>
+	        	<li class="nav-item"><a data-toggle="tab" href="#tab-4" aria-expanded="false" class="nav-link">[+business+] [+contact+]</a></li>
+	    	</ul>
+    		
+    		<div class="tab-content">    
+    			<div id="tab-1" class="tab-pane active">
+        			<div class="panel-body  p-xl-3">
+	        	 		<form class="companyview/update" method="post">
+	       					<h4 class="mb-xlg">[+business+] [+information+]</h4>
+	    					<fieldset>
 
-    						<div class="form-group row">
-		                        <label class="col-lg-4 form-control-label">[+company_name+]</label>
-		                        <div class="col-lg-8">
-		                            <input type="text" placeholder="[+company_name+]" class="form-control"  name="company_name" value="[+company_legal_name_db+]">
+	    						<div class="form-group row">
+			                        <label class="col-lg-4 form-control-label">[+company_name+]</label>
+			                        <div class="col-lg-8">
+			                            <input type="text" placeholder="[+company_name+]" class="form-control"  name="company_name" value="[+company_legal_name_db+]">
+			                        </div>
+			                    </div>
+
+		                    	<div class="form-group row">
+                            		<label class="col-lg-4 form-control-label">[+foreign+]</label>
+		                            <div class="col-lg-8 col-md-9">
+		                                <select class="form-control" name="company_foreign">
+		                                    <optgroup label="[+foreign+]">
+		                                        <option [+foreign_selected_yes+] value="1">[+yes+]</option>
+		                                        <option [+foreign_selected_no+] value="0">[+no+]</option>
+		                                    </optgroup>                                                      
+		                                </select>
+		                            </div>
+                        		</div>
+
+		                        <div class="form-group row">
+		                            <label class="col-lg-4 form-control-label">[+payment_period+]</label>
+		                            <div class="col-lg-8 col-md-9">
+		                                <select class="form-control" name="payment_period_id">
+		                                    <optgroup label="[+payment_period+]">
+		                                        <option [+monthly_selected+] value="1">[+monthly+]</option>
+		                                        <option [+quarterly_selected+] value="2">[+quarterly+]</option>
+		                                        <option [+yearly_selected+] value="3">[+yearly+]</option>
+		                                    </optgroup>                                                      
+		                                </select>
+		                            </div>
 		                        </div>
-		                    </div>
 
-		                     <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+foreign+]</label>
-                            <div class="col-lg-8 col-md-9">
-                                <select class="form-control" name="company_foreign">
-                                    <optgroup label="[+foreign+]">
-                                        <option [+foreign_selected_yes+] value="1">[+yes+]</option>
-                                        <option [+foreign_selected_no+] value="0">[+no+]</option>
-                                    </optgroup>                                                      
-                                </select>
-                            </div>
-                        </div>
+		                        <div class="form-group row">
+		                            <label class="col-lg-4 form-control-label">[+company_number+]</label>
+		                            <div class="col-lg-8">
+		                                <input type="text" value="[+company_number_db+]" placeholder="[+company_number+]" class="form-control" name="company_number">
+		                            </div>
+		                        </div>
 
-                        <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+payment_period+]</label>
-                            <div class="col-lg-8 col-md-9">
-                                <select class="form-control" name="payment_period_id">
-                                    <optgroup label="[+payment_period+]">
-                                        <option [+monthly_selected+] value="1">[+monthly+]</option>
-                                        <option [+quarterly_selected+] value="2">[+quarterly+]</option>
-                                        <option [+yearly_selected+] value="3">[+yearly+]</option>
-                                    </optgroup>                                                      
-                                </select>
-                            </div>
-                        </div>
+	                            <div class="form-group row">
+	                            	<label class="col-lg-4 form-control-label">[+vat_number+]</label>
+	                            	<div class="col-lg-8">
+	                                	<input type="text" value="[+company_vat_number_db+]" placeholder="[+vat_number+]" class="form-control" name="company_vat_number">
+	                            	</div>
+	                       		</div>
 
-                        <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+company_number+]</label>
-                            <div class="col-lg-8">
-                                <input type="text" value="[+company_number_db+]" placeholder="[+company_number+]" class="form-control" name="company_number">
-                            </div>
-                        </div>
+		                        <div class="form-group row">
+		                            <label class="col-lg-4 form-control-label">[+company_add_commission+]</label>
+		                            <div class="col-lg-8">
+		                                <input type="text" value="[+company_add_commission_db+]" placeholder="[+company_add_commission+]" class="form-control"  name="company_add_commission">
+		                            </div>
+		                        </div>
 
-                         <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+vat_number+]</label>
-                            <div class="col-lg-8">
-                                <input type="text" value="[+company_vat_number_db+]" placeholder="[+vat_number+]" class="form-control" name="company_vat_number">
-                            </div>
-                        </div>
+		                        <div class="form-group row">
+		                            <label class="col-lg-4 form-control-label">[+company_layout_without_consent+]</label>
+		                            <div class="col-lg-8">
+		                                <input type="text" value="[+company_layout_without_consent_db+]" placeholder="[+company_layout_without_consent+]" class="form-control"  name="company_layout_without_consent">
+		                            </div>
+		                        </div>
 
-                        <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+company_add_commission+]</label>
-                            <div class="col-lg-8">
-                                <input type="text" value="[+company_add_commission_db+]" placeholder="[+company_add_commission+]" class="form-control"  name="company_add_commission">
-                            </div>
-                        </div>
+		                        <div class="form-group row">
+		                            <label class="col-lg-4 form-control-label">[+financial_year+]</label>
+		                            <div class="col-lg-8">
 
-                         <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+company_layout_without_consent+]</label>
-                            <div class="col-lg-8">
-                                <input type="text" value="[+company_layout_without_consent_db+]" placeholder="[+company_layout_without_consent+]" class="form-control"  name="company_layout_without_consent">
-                            </div>
-                        </div>
+		                                 <input type="text" placeholder="DD/MM"  data-masked="" data-inputmask="'mask': '99/99'" class="form-control"  name="financial_year" value="[+financial_year_db+]" id="financial_year">
+		                            </div>
+		                        </div>
 
-                        <div class="form-group row">
-                            <label class="col-lg-4 form-control-label">[+financial_year+]</label>
-                            <div class="col-lg-8">
-
-                                 <input type="text" placeholder="DD/MM"  data-masked="" data-inputmask="'mask': '99/99'" class="form-control"  name="financial_year" value="[+financial_year_db+]" id="financial_year">
-                            </div>
-                        </div>
-
-    					</fieldset>
+    						</fieldset>
       
 	 
         		</div>
@@ -383,9 +370,10 @@
 
 
 
-
-
-
+</div>
+</div>
+</div>
+</div>
 
 
 <!-- <div class="modal fade" id="add_investor_form_model" tabindex="-1" role="dialog" >
@@ -487,3 +475,4 @@
         </div>
     </div>
 </div> -->
+
