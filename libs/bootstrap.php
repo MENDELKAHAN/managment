@@ -10,9 +10,11 @@ class Bootstrap
 		$url = isset($_GET['url']) ? $_GET['url'] : null;
 		$url = explode("/", rtrim($url));
 
+
 		if(empty($url[0]) || $url[0] == "index.php"){
 			require "controllers/index.php";
 			$controller = new Index();
+			$controller-> index();
 			return false;
 		}
 
