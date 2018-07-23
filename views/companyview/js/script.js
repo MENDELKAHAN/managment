@@ -59,6 +59,11 @@ $(function(){
 
 
 
+var next = document.querySelectorAll("a[href='#next']");
+ next[0].onclick = function() {
+        alert("hello");
+        return false;
+    };
 
 
 
