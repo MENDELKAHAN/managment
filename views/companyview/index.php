@@ -73,10 +73,7 @@
         $pass30 = str_replace('[+foreign_selected_no+]', "selected", $pass29);
     }
    
-
-
     $pass31 = str_replace('[+percentage+]',$lang['percentage'], $pass30);
-
     $pass32 = str_replace('[+monthly+]', $lang['monthly'], $pass31);
     $pass33 = str_replace('[+quarterly+]', $lang['quarterly'], $pass32);
     $pass34 = str_replace('[+yearly+]', $lang['yearly'], $pass33);
@@ -167,6 +164,35 @@
     $pass85 = str_replace('[+add_investor+]',$lang['add_investor'], $pass84);
 
 
+    $investors = $this-> all_investors;
+    $current_investors = $this -> invetors_details;
+
+    $current_investors_array = [];
+    if($current_investors){
+        foreach ($current_investors as $single){
+            $current_investors_array [] = $single['investors_id'];
+        }
+    }
+    
+    
+    $investors_result ="";
+
+
+     foreach ($investors as $investor){
+        if (in_array($investor -> investors_id, $current_investors_array)){
+            $investors_result.= "<option selected value=".$investor-> investors_id." " .$investor-> investors_id.">".$investor -> investors_fname. " ". $investor -> investors_lname."</option>";
+
+        }else{
+
+        
+        $investors_result.= "<option value=".$investor-> investors_id." " .$investor-> investors_id.">".$investor -> investors_fname. " ". $investor -> investors_lname."</option>";
+        
+        }
+    }
+
+    $pass86 = str_replace('[+investors_list_db+]',$investors_result, $pass85);
+
+
     
 
 
@@ -178,7 +204,7 @@
 
 
 
-    $final= str_replace('[+companies+]', $lang['companies'], $pass85); 
+    $final= str_replace('[+companies+]', $lang['companies'], $pass86); 
 
     echo $final;
 

@@ -72,7 +72,13 @@ if(isset($company_banks[0])){
 	// $this -> view -> total_companies = Company::get_total_companies($investor);
 	// $this -> view -> companies_details = Company::companies($investor);
 	$this -> view -> invetors_details = Companies::investors($company);
+
+	$this -> view -> all_investors = Investors::find_all();
+
 	$this -> view-> render("companyview/index");
+
+
+
 	}
 
 	

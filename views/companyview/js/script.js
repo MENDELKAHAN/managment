@@ -59,19 +59,67 @@ $(function(){
 
 
 
-var next = document.querySelectorAll("a[href='#next']");
- next[0].onclick = function() {
-        alert("hello");
-        return false;
-    };
+// var next = document.querySelectorAll("a[href='#next']");
+//  next[0].onclick = function() {
+//         alert("hello");
+//         return false;
+//     };
+
+
+
+document.getElementById("s2id_select_investors").addEventListener("keypress", myFunction);
+
+
+
+function myFunction() {
+    // alert("clicked");
+    return false;
+    e.document.getElementById("next")
+
+    // document.getElementById("s2id_select_investors").style.backgroundColor = "red";
+    // alert("press");
+}
+
+document.getElementById("next").addEventListener("click", function(event){
+    event.preventDefault();
+
+    var e = document.getElementById("select_investors");
+// var value = e.options[e.selectedIndex].value;
+// var text = e.options[e.selectedIndex].text;
+        console.log(getSelectValues(e));
+        $('#tab2').tab('show');
+        $('#tab1').className = "disabled";
+        
+
+
+
+});
 
 
 
 
+function getSelectValues(select) {
+  var result = [];
+  var options = select && select.options;
+  var opt;
 
+  for (var i=0, iLen=options.length; i<iLen; i++) {
+    opt = options[i];
 
+    if (opt.selected) {
+        var id = opt.value;
+        var text = opt.text;
+        var unit = [];
+        unit['id']= id
+        unit['text'] = text;
 
+        result.push(unit);
+      // result.push(opt.value || opt.text);
 
+    }
+  }
+  return result;
+}
 
 
 
