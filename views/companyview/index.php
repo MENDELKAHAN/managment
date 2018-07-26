@@ -5,6 +5,7 @@
     include 'views/nav.html';  
     include 'languages/en.php';
 
+    // page title
     $file  = 'templates/body_title.html';
     $tpl_a = file_get_contents($file);
     $final = str_replace('[+page_title+]', $this -> company_legal_name_db, $tpl_a);
@@ -41,6 +42,7 @@
     $pass23= str_replace('[+foreign+]', $lang['foreign'], $pass22); 
     $pass24= str_replace('[+financial_year+]', $lang['financial_year'], $pass23); 
     $pass25= str_replace('[+business+]', $lang['business'], $pass24); 
+
 
 
     $table_content="";
@@ -137,6 +139,7 @@
         $pass65 = str_replace('[+yearly_selected+]', "selected", $pass64);
 
     }
+    
     $pass66 = str_replace('[+account_name_db+]',$this -> company_banks_name, $pass65);
     $pass67 = str_replace('[+account_name+]',$lang['accounts_name'], $pass66);
     $pass68 = str_replace('[+company_address_number+]',$lang['house_number'], $pass67);
@@ -145,20 +148,16 @@
     $pass71 = str_replace('[+company_address_town+]',$lang['address_town'], $pass70);
     $pass72 = str_replace('[+company_address_postcode+]',$lang['address_postcode'], $pass71);
     $pass73 = str_replace('[+company_address_country+]',$lang['address_country'], $pass72);
-
     $pass74 = str_replace('[+company_address_number_db+]',$this -> company_address_number, $pass73);
     $pass75 = str_replace('[+company_address_line_1_db+]',$this -> company_address_line_1, $pass74);
     $pass76 = str_replace('[+company_address_line_2_db+]',$this -> company_address_line_2, $pass75);
     $pass77 = str_replace('[+company_address_town_db+]',$this -> company_address_town, $pass76);
     $pass78 = str_replace('[+company_address_postcode_db+]',$this -> company_address_postcode, $pass77);
     $pass79 = str_replace('[+company_address_country_db+]',$this -> company_address_country, $pass78);
-
     $pass80 = str_replace('[+company_contact_number+]',$lang['contact_number'], $pass79);
     $pass81 = str_replace('[+update+]',$lang['update'], $pass80);
     $pass82 = str_replace('[+contact+]',$lang['contact'], $pass81);
-
     $pass83 = str_replace('[+company_contact_number_db+]',$this -> company_contact_number, $pass82);
-
     $pass84 = str_replace('[+company_email_db+]',$this -> company_email, $pass83);
     $pass85 = str_replace('[+sharehold+]',$lang['sharehold'], $pass84);
     $pass85 = str_replace('[+add_investor+]',$lang['add_investor'], $pass84);
@@ -191,27 +190,9 @@
     }
 
     $pass86 = str_replace('[+investors_list_db+]',$investors_result, $pass85);
-
-
-    
-
-
-    
-
-
-
-
-
-
-
-    $final= str_replace('[+companies+]', $lang['companies'], $pass86); 
-
+    $pass87 = str_replace('[+create+]', $lang['create'], $pass86);
+    $final= str_replace('[+companies+]', $lang['companies'], $pass87); 
     echo $final;
-
-
-
-
-
 
 ?>
 

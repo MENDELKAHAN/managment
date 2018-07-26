@@ -67,18 +67,14 @@ $(function(){
 
 
 
-document.getElementById("s2id_select_investors").addEventListener("keypress", myFunction);
+// document.getElementById("s2id_select_investors").addEventListener("keypress", myFunction);
 
 
 
-function myFunction() {
-    // alert("clicked");
-    return false;
-    e.document.getElementById("next")
-
-    // document.getElementById("s2id_select_investors").style.backgroundColor = "red";
-    // alert("press");
-}
+// function myFunction() {
+//     return false;
+//     e.document.getElementById("next")
+// }
 
 document.getElementById("next").addEventListener("click", function(event){
     event.preventDefault();
@@ -86,7 +82,71 @@ document.getElementById("next").addEventListener("click", function(event){
     var e = document.getElementById("select_investors");
 // var value = e.options[e.selectedIndex].value;
 // var text = e.options[e.selectedIndex].text;
-        console.log(getSelectValues(e));
+       var selected_values =  getSelectValues(e);
+
+       for (var i = 0; i < selected_values.length; i++) {
+
+            var div_form_row = document.createElement("DIV");
+            div_form_row.setAttribute("class", "form-group row");
+                      
+            var div_id = document.createElement("DIV");
+            div_id.setAttribute("class", "col-md-0");
+            div_form_row.appendChild(div_id);
+
+            var id_input = document.createElement("INPUT");
+            id_input.setAttribute("class","form-control");
+            id_input.setAttribute("type", "hidden");
+            id_input.setAttribute("value", selected_values[i].id);
+            id_input.readOnly = true;
+            div_id.appendChild(id_input);
+
+            var div_text = document.createElement("DIV");
+            div_text.setAttribute("class", "col-md-9");
+             div_form_row.appendChild(div_text);
+
+            var text = document.createElement("INPUT");
+            text.setAttribute("class","form-control");       
+            text.setAttribute("type", "text");
+            text.readOnly = true;
+            text.setAttribute("value", selected_values[i].text);
+
+            div_text.appendChild(text);
+
+            var div_percent = document.createElement("DIV");
+            div_percent.setAttribute("class", "col-md-3");
+            div_form_row.appendChild(div_percent);
+
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   alert(xhttp.responseText);
+                }
+            };
+            xhttp.open("GET", "company/hello", true);
+            xhttp.send();
+
+
+
+
+            var percent = document.createElement("INPUT");
+            percent.setAttribute("class","form-control");       
+            percent.setAttribute("type", "number");
+            // text.setAttribute("value", );
+
+            div_percent.appendChild(percent);
+
+
+       
+      
+     
+            document.getElementById('dinamic_build').appendChild(div_form_row);
+
+
+       }
+        
+
         $('#tab2').tab('show');
         $('#tab1').className = "disabled";
         

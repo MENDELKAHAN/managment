@@ -35,6 +35,7 @@ class Investor extends Controller{
 
 
 
+
 	
 
 }
