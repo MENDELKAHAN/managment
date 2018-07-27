@@ -1,7 +1,9 @@
 <?php
 
 /**
- * 
+ *  mvv managment
+ *  reads hte name spaces
+ *  calls models 
  */
 class Bootstrap
 {

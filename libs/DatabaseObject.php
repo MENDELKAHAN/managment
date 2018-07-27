@@ -48,7 +48,7 @@
     }
     
     /**
-     * creade
+     * create
      * inserts into database 
      *
      * @return insert_id() last inserted id

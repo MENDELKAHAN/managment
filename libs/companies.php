@@ -1,5 +1,10 @@
 <?php
 
+/* Companies class
+ *
+ *
+*/
+
 class Companies extends DatabaseObject{
 
 	protected static $table_name = "company";
@@ -24,10 +29,6 @@ class Companies extends DatabaseObject{
 	public $company_bank_ref;
 	public $fk_manager_account_id;
 
-
-	
-
-
 	
 	function __construct() {
        $this-> db_fields = $this->getColumnNames();
@@ -35,11 +36,11 @@ class Companies extends DatabaseObject{
    }
 
 
-// total companies, invesor is part of
+	// total companies, invesor is part of
    	public static function get_total_companies($investor){
-				$sql = "SELECT * FROM `company` C JOIN company_investors CI ON CI.fk_company_id = C.company_id AND CI.fk_investors_id =".$investor;
-				$result_set = self::$database->query($sql);
-                return $result_set->num_rows;
+		$sql = "SELECT * FROM `company` C JOIN company_investors CI ON CI.fk_company_id = C.company_id AND CI.fk_investors_id =".$investor;
+		$result_set = self::$database->query($sql);
+        return $result_set->num_rows;
 	}
 
 	public static function companies($investor='')
@@ -52,15 +53,13 @@ class Companies extends DatabaseObject{
 				$secondary = array('company_legal_name' => $row["company_legal_name"], 
 					'company_investors_percentage' => $row["company_investors_percentage"],
 					'fk_company_id' => $row["fk_company_id"] );
-
 				$array_result[] = $secondary;
+			}
+			return $array_result;
+		}else{
+			return false;
 		}
-		
-				return $array_result;
-	}	else{
-		return false;
 	}
-}
 
 	public function investors($company='')
 	{
