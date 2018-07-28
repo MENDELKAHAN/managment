@@ -80,75 +80,72 @@ document.getElementById("next").addEventListener("click", function(event){
     event.preventDefault();
 
     var e = document.getElementById("select_investors");
-// var value = e.options[e.selectedIndex].value;
-// var text = e.options[e.selectedIndex].text;
-       var selected_values =  getSelectValues(e);
+    var selected_values =  getSelectValues(e);
 
-       for (var i = 0; i < selected_values.length; i++) {
+   for (var i = 0; i < selected_values.length; i++) {
 
-            var div_form_row = document.createElement("DIV");
-            div_form_row.setAttribute("class", "form-group row");
-                      
-            var div_id = document.createElement("DIV");
-            div_id.setAttribute("class", "col-md-0");
-            div_form_row.appendChild(div_id);
+        var div_form_row = document.createElement("DIV");
+        div_form_row.setAttribute("class", "form-group row");
+                  
+        var div_id = document.createElement("DIV");
+        div_id.setAttribute("class", "col-md-0");
+        div_form_row.appendChild(div_id);
 
-            var id_input = document.createElement("INPUT");
-            id_input.setAttribute("class","form-control");
-            id_input.setAttribute("type", "hidden");
-            id_input.setAttribute("value", selected_values[i].id);
-            id_input.readOnly = true;
-            div_id.appendChild(id_input);
+        var id_input = document.createElement("INPUT");
+        id_input.setAttribute("class","form-control");
+        id_input.setAttribute("type", "hidden");
+        id_input.setAttribute("name", "id["+(i+1)+"]");
 
-            var div_text = document.createElement("DIV");
-            div_text.setAttribute("class", "col-md-9");
-             div_form_row.appendChild(div_text);
+        id_input.setAttribute("value", selected_values[i].id);
+        id_input.readOnly = true;
+        div_id.appendChild(id_input);
 
-            var text = document.createElement("INPUT");
-            text.setAttribute("class","form-control");       
-            text.setAttribute("type", "text");
-            text.readOnly = true;
-            text.setAttribute("value", selected_values[i].text);
+        var div_text = document.createElement("DIV");
+        div_text.setAttribute("class", "col-md-9");
+        div_form_row.appendChild(div_text);
 
-            div_text.appendChild(text);
+        var text = document.createElement("INPUT");
+        text.setAttribute("class","form-control");       
+        text.setAttribute("type", "text");
+        text.readOnly = true;
+        text.setAttribute("value", selected_values[i].text);
+        text.setAttribute("name", "text["+(i+1)+"]");
+        div_text.appendChild(text);
 
-            var div_percent = document.createElement("DIV");
-            div_percent.setAttribute("class", "col-md-3");
-            div_form_row.appendChild(div_percent);
+        var div_percent = document.createElement("DIV");
+        div_percent.setAttribute("class", "col-md-3");
+        div_form_row.appendChild(div_percent);
 
+        
+        // get the percentage the investor has in hte company
 
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   alert(xhttp.responseText);
-                }
-            };
-            xhttp.open("GET", "company/hello", true);
-            xhttp.send();
-
-
-
-
-            var percent = document.createElement("INPUT");
-            percent.setAttribute("class","form-control");       
-            percent.setAttribute("type", "number");
-            // text.setAttribute("value", );
-
-            div_percent.appendChild(percent);
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //        alert(xhttp.responseText);
+        //     }
+        // };
+        // xhttp.open("GET", "company/investor_percent/"+invesotr_id+"/"+company_id, true);
+        // xhttp.send();
 
 
-       
-      
+        var percent = document.createElement("INPUT");
+        percent.setAttribute("class","form-control");       
+        percent.setAttribute("type", "number");
+        percent.setAttribute("name", "percent["+(i+1)+"]");
+        // text.setAttribute("value", );
+
+        div_percent.appendChild(percent);
+
      
-            document.getElementById('dinamic_build').appendChild(div_form_row);
-
+        document.getElementById('dinamic_build').appendChild(div_form_row);
 
        }
         
 
         $('#tab2').tab('show');
         $('#tab1').className = "disabled";
+         $('#tab1').className = "active";
         
 
 

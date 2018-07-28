@@ -2,7 +2,7 @@
 
 	defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 	//local server
-	defined('SITE_ROOT') ? null : define('x', DS.'xampp'.DS.'htdocs'.DS.'managment');
+	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'managment');
 
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
 	defined('URL')  ? null : define('URL', 'http://localhost/managment');
