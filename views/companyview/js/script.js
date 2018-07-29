@@ -116,24 +116,17 @@ document.getElementById("next").addEventListener("click", function(event){
         div_percent.setAttribute("class", "col-md-3");
         div_form_row.appendChild(div_percent);
 
+        var company_id = 68;
         
-        // get the percentage the investor has in hte company
-
-        // var xhttp = new XMLHttpRequest();
-        // xhttp.onreadystatechange = function() {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //        alert(xhttp.responseText);
-        //     }
-        // };
-        // xhttp.open("GET", "company/investor_percent/"+invesotr_id+"/"+company_id, true);
-        // xhttp.send();
+        // xhttp.open("GET", "company/investor_percent/"+selected_values[i].id+"/"+company_id, true);
+        
 
 
         var percent = document.createElement("INPUT");
         percent.setAttribute("class","form-control");       
         percent.setAttribute("type", "number");
         percent.setAttribute("name", "percent["+(i+1)+"]");
-        // text.setAttribute("value", );
+        percent.setAttribute("value", get_current_invesor_percent());
 
         div_percent.appendChild(percent);
 
@@ -141,6 +134,19 @@ document.getElementById("next").addEventListener("click", function(event){
         document.getElementById('dinamic_build').appendChild(div_form_row);
 
        }
+
+
+
+    function get_current_invesor_percent() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                return responseText;
+            }
+        };
+        xhttp.open("GET", "company/investor_percent/"+1, true);
+        xhttp.send();
+    }
         
 
         $('#tab2').tab('show');

@@ -32,5 +32,13 @@ class Company extends Controller{
         $this-> model-> create();
 	}
 
+	
+	public function investor_percent($investor="", $company="")
+	{
+       echo  "zsd";
+	}
+
+	
+
 }
 ?>
