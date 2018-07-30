@@ -81,7 +81,7 @@ document.getElementById("next").addEventListener("click", function(event){
 
     var e = document.getElementById("select_investors");
     var selected_values =  getSelectValues(e);
-
+var total_percent =0;
    for (var i = 0; i < selected_values.length; i++) {
 
         var div_form_row = document.createElement("DIV");
@@ -116,8 +116,8 @@ document.getElementById("next").addEventListener("click", function(event){
         div_percent.setAttribute("class", "col-md-3");
         div_form_row.appendChild(div_percent);
 
+
         var company_id = 68;
-        
         // xhttp.open("GET", "company/investor_percent/"+selected_values[i].id+"/"+company_id, true);
         
 
@@ -131,7 +131,8 @@ document.getElementById("next").addEventListener("click", function(event){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                        percent.setAttribute("value",  Number(this.responseText));
+                total_percent +=Number(this.responseText)
+                    percent.setAttribute("value",  Number(this.responseText));
             }
         };
         xhttp.open("GET", "company/investor_percent/"+1, true);
@@ -143,14 +144,10 @@ document.getElementById("next").addEventListener("click", function(event){
      
         document.getElementById('dinamic_build').appendChild(div_form_row);
 
-       }
-
-
-
-   
+       }  
        
     
-        
+        alert(total_percent);
 
         $('#tab2').tab('show');
         $('#tab1').className = "disabled";
