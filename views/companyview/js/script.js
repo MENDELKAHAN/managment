@@ -1,5 +1,6 @@
 !function($) {
     "use strict";
+    // chart
 $(function(){
 	
 	var ctx2 = document.getElementById("canvas").getContext("2d");
@@ -126,7 +127,8 @@ document.getElementById("next").addEventListener("click", function(event){
         percent.setAttribute("class","form-control");       
         percent.setAttribute("type", "number");
         percent.setAttribute("name", "percent["+(i+1)+"]");
-        alert(get_percent());
+        // alert(get_percent());
+        get_percent()
         div_percent.appendChild(percent);
 
 
@@ -155,17 +157,37 @@ document.getElementById("next").addEventListener("click", function(event){
 
 
   function get_percent() {
-        var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
 
-                    // total_percent += Number(this.responseText);
-                    // percent.setAttribute("value",  Number(this.responseText));
-                    return  Number(this.responseText);
-                }
-            };
-            xhttp.open("GET", "company/investor_percent/1", true);
-            xhttp.send();
+
+    var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
+        return  Number(xhr.responseText);
+    }
+}
+      xhr.open("GET", "company/investor_percent", true);
+    xhr.send(null);
+
+
+
+
+
+
+    // var xhttp = new XMLHttpRequest();
+    // var url = "company/investor_percent/1";
+    // xhttp.open("GET", url, true);
+
+     // xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4 && this.status == 200) {
+
+    //             // total_percent += Number(this.responseText);
+    //             // percent.setAttribute("value",  Number(this.responseText));
+    //             return  Number(this.responseText);
+    //         }
+    //     };
+    //     xhttp.open("GET", "company/investor_percent", true);
+    //     xhttp.send();
 
     }
 
