@@ -2,8 +2,8 @@
     "use strict";
     // chart
 $(function(){
-	
-	var ctx2 = document.getElementById("canvas").getContext("2d");
+    
+    var ctx2 = document.getElementById("canvas").getContext("2d");
     var data2 = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [
@@ -127,25 +127,18 @@ document.getElementById("next").addEventListener("click", function(event){
         percent.setAttribute("class","form-control");       
         percent.setAttribute("type", "number");
         percent.setAttribute("name", "percent["+(i+1)+"]");
-        // alert(get_percent());
-        get_percent()
+        percent.setAttribute("value",get_percent(selected_values[i].id) );
+             
+        
         div_percent.appendChild(percent);
 
 
-        
-
-
-        
-
-     
+         
         document.getElementById('dinamic_build').appendChild(div_form_row);
 
        }  
 
        
-    
-        // alert(total_percent);
-
         $('#tab2').tab('show');
         $('#tab1').className = "disabled";
          $('#tab1').className = "active";
@@ -156,43 +149,29 @@ document.getElementById("next").addEventListener("click", function(event){
 });
 
 
-  function get_percent() {
+    function get_percent(investor) {
 
-
-    var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
-        return  Number(xhr.responseText);
+        var result;
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                result =  Number(xhr.responseText);
+            }
+        }
+         xhr.open("GET", "companyview/investor_percent" + "?company="+get_company()+"&investor="+investor,false);
+        xhr.send();
+        return result;
     }
-}
-      xhr.open("GET", "company/investor_percent", true);
-    xhr.send(null);
+    
 
-
-
-
-
-
-    // var xhttp = new XMLHttpRequest();
-    // var url = "company/investor_percent/1";
-    // xhttp.open("GET", url, true);
-
-     // xhttp.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
-
-    //             // total_percent += Number(this.responseText);
-    //             // percent.setAttribute("value",  Number(this.responseText));
-    //             return  Number(this.responseText);
-    //         }
-    //     };
-    //     xhttp.open("GET", "company/investor_percent", true);
-    //     xhttp.send();
-
+    function get_company() {
+        var url = window.location.href;
+        var url_array = url.split("/");
+        return(url_array[(url_array.length -1)]);
     }
 
 
-
+get_company();
 
 function getSelectValues(select) {
   var result = [];
@@ -219,15 +198,5 @@ function getSelectValues(select) {
 
 
 
-
-
-
-
-
-
-
-
-
-
   
-	}(window.jQuery);	
+    }(window.jQuery);   

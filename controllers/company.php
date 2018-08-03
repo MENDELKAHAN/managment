@@ -33,10 +33,7 @@ class Company extends Controller{
 	}
 
 	
-	public function investor_percent($investor="", $company="")
-	{
-       echo  30;
-	}
+	
 
 	
 

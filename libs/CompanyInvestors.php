@@ -1,5 +1,5 @@
 <?php
-require_once(LIB_PATH.DS.'database.php');
+
 
 class CompanyInvestors extends DatabaseObject{
 
@@ -23,6 +23,14 @@ class CompanyInvestors extends DatabaseObject{
 		$result = CompanyInvestors::find_by_sql($sql);
 		return $result;
 	}
+
+	public static function get_investor_percent($company, $investor){
+	$sql = "SELECT `company_investors_percentage` FROM company_investors WHERE fk_company_id=". $company." AND fk_investors_id= ".$investor;
+
+	return(self::find_by_sql($sql));
+	
+
+}
 }
 
 ?>

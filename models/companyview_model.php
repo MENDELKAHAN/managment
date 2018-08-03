@@ -10,12 +10,23 @@ class Companyview_Model extends Model
   
   function __construct()
   {
-
-   
   }
 
+  public  function investor_percent()
+  {
+    $company = if_is_set($_GET["company"]);
+    $investor = if_is_set($_GET["investor"]);
+    $result =  CompanyInvestors::get_investor_percent($company,$investor);
+    if(isset($result[0])){
+          echo  ($result[0] -> company_investors_percentage );
 
-    public function create()
+        }else{
+          echo "0";
+        }
+}
+
+
+  public function create()
   {
     $results = array();
   

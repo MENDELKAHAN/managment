@@ -17,6 +17,15 @@ class Companyview extends Controller{
 		$this -> view  -> js = array('companyview/js/script.js');	
 	}
 
+    public function investor_percent()
+    {
+        $this-> model-> investor_percent();
+    }
+  	 
+
+    
+  
+
 
 	public function index($company="")
 	{
