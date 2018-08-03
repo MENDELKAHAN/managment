@@ -12,6 +12,8 @@ class Login_Model extends Model
 
 	}
 
+	// logingin function
+	// sets sessions 
 	public function run()
 	{
 		$username = $user = $_POST['username'];
@@ -19,11 +21,9 @@ class Login_Model extends Model
 		if(Users::authenticate($user, $pass)){
 			Session::set('user',$user);
             Session::set('logedIn',true);
-            header('location: ../index');
+            redirect_to("index");
 		}
-		header('location, ../login');
-
-		
+			redirect_to("login");		
 	}
  
 	

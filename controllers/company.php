@@ -32,10 +32,6 @@ class Company extends Controller{
         $this-> model-> create();
 	}
 
-	
-	
-
-	
 
 }
 ?>

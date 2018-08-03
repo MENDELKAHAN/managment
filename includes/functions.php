@@ -14,7 +14,7 @@
     // calls the header function 
     function redirect_to($location = NULL){
         if ($location != NULL) {
-            header("Location: {$location}");
+            header("Location: ".URL.DS.$location);
             exit;
         }
     }

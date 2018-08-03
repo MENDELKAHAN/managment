@@ -5,7 +5,7 @@
 	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS.'xampp'.DS.'htdocs'.DS.'managment');
 
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'includes' .DS);
-	defined('URL')  ? null : define('URL', 'http://localhost/managment');
+	defined('URL')  ? null : define('URL', 'http://localhost:8080/managment');
 	defined('LIB')  ? null : define('LIB', SITE_ROOT .DS.'libs');
 
 	
