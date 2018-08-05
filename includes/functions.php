@@ -27,4 +27,13 @@
         return "";
     }
 
+    function title ($title)
+    {
+        
+    $file  = 'templates/body_title.html';
+    $tpl_a = file_get_contents($file);
+    $final = str_replace('[+page_title+]', $title, $tpl_a);
+    echo $final;
+    }
+
 ?>

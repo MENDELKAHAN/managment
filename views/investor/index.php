@@ -1,16 +1,6 @@
-
-
 <?php
+    title($lang['investors'], $tpl_a);
 
-	include'views/head.php';
-	include 'views/header.php';
-	include 'views/nav.html';  
-    include 'languages/en.php';
-
-    $file  = 'templates/body_title.html';
-    $tpl_a = file_get_contents($file);
-    $final = str_replace('[+page_title+]', $lang['investors'], $tpl_a);
-    echo $final;
 
     include 'views/investor_table.php';
     

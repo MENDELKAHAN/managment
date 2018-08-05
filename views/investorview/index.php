@@ -1,20 +1,7 @@
 
 <?php
-    include'views/head.php';
-    include 'views/header.php';
-    include 'views/nav.html';  
-    include 'languages/en.php';
+title($this -> investors_title . " ". $this -> investors_fname ." ". $this -> investors_lname ."( ".$this -> investors_company_name.")");
 
-    $file  = 'templates/body_title.html';
-    $tpl_a = file_get_contents($file);
-    $final = str_replace('[+page_title+]', $this -> investors_title . $this -> investors_fname . $this -> investors_lname ."( ".$this -> investors_company_name." )", $tpl_a);
-
-
-    echo $final;
-?>
-
-
-<?php
     $file  = 'templates/investorview.html';
     $tpl_a = file_get_contents($file);
 

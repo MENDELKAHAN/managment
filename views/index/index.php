@@ -1,13 +1,3 @@
-
-<?php
-
-	include'views/head.php';
-
-	include 'views/header.php';
-
-	include 'views/nav.html';
-
-?>
  
                         <div class="row">
                             <div class="col-sm-12">
@@ -24,13 +14,6 @@
                             </div>
                         </div><!-- end .page title-->                
 
-                        
-                       
-
-
-
-                            
-              
 
 <?php
 	require 'views/footer.php';

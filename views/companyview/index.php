@@ -1,19 +1,8 @@
 
 <?php
-    include'views/head.php';
-    include 'views/header.php';
-    include 'views/nav.html';  
-    include 'languages/en.php';
-
+  
     // page title
-    $file  = 'templates/body_title.html';
-    $tpl_a = file_get_contents($file);
-    $final = str_replace('[+page_title+]', $this -> company_legal_name_db, $tpl_a);
-    echo $final;
-?>
-
-
-<?php
+    title($this -> company_legal_name_db);
     
     $file  = 'templates/companyview.html';
     $tpl_a = file_get_contents($file);
