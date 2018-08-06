@@ -7,7 +7,7 @@ class Controller{
 
 	function __construct()
 	{
-		$this -> view = new AdminView();
+		$this -> view = new View();
 	}
 
 	public function loadModel($name)

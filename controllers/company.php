@@ -22,6 +22,7 @@ class Company extends Controller{
 		$company =  new $class_name;
 		$this -> view -> result_array = $company -> find_all(); 
    		$this -> view -> manager_acounts = ManagerBankAccounts::find_all();
+		$this -> view->  render("adminview/index");
 		$this -> view->  render("company/index");
 
 	}

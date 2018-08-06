@@ -22,6 +22,8 @@ class Investor extends Controller{
 		$class_name = "Investors";
 		$multi = $class_name::find_all(); 
    		$this-> view -> result_array = $multi;
+   		
+   			$this -> view-> render("adminview/index");
 		$this -> view-> render("investor/index");
 	}
 

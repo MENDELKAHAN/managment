@@ -31,22 +31,12 @@ class Investorview extends Controller{
 		$this -> view -> investors_lname = $investor_array -> investors_lname;
 		$this -> view -> investors_foreign = $investor_array -> investors_foreign;
 		$this -> view -> fk_manager_account_id = $investor_array -> fk_manager_account_id;
-		$this -> view -> investors_active = $investor_array -> investors_active;
-
-
-		
+		$this -> view -> investors_active = $investor_array -> investors_active;		
 		$this -> view -> investors_email = InvestorsEmails::investors_active_emails($investor);
 		$this -> view -> investors_number = InvestorContactNumbers::investors_active_number($investor);
-
-
-
-
-
-
-		// $this -> view -> total_properties = PropertyUnits::get_total_unit_properties($investor);
-		// $this -> view -> cash_by_us_db = Investors::cash_by_us($investor);
 		$this -> view -> total_companies = Companies::get_total_companies($investor);
 		$this -> view -> companies_details = Companies::companies($investor);
+		$this -> view-> render("adminview/index");
 		$this -> view-> render("investorview/index");
 	}
 

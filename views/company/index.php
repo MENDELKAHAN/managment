@@ -1,7 +1,7 @@
 <?php
 
     
-
+    include 'languages/en.php';
     title($lang['companies']);
 
     $file  = 'templates/company.html';

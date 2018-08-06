@@ -1,6 +1,6 @@
 
 <?php
-  
+    include 'languages/en.php';
     // page title
     title($this -> company_legal_name_db);
     
